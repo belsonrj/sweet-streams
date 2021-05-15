@@ -1,0 +1,107 @@
+html {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(2, 26, 54);
+  color: rgb(250, 244, 244);
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+small {
+  font-size: 1.2rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 40px;
+}
+
+.title {
+  font-size: 4.4rem;
+  text-align: center;
+}
+
+.form {
+  display: grid;
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.input {
+  font-size: 1.6rem;
+  padding: 0.5rem 2rem;
+  line-height: 2.8rem;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  padding: 1rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  border-radius: 20px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background-color 250ms;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+@media (min-width: 786px) {
+  .form {
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 1rem;
+    align-items: center;
+  }
+
+  .input {
+    margin-bottom: 0;
+  }
+}
+
+.card-list {
+  align-items: baseline;
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 2rem 4rem;
+  border-radius: 10px;
+  border: 5px double;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.361);
+  margin: 4rem;
+  background-color: grey;
+  width: 350px;
+  display: block;
+}
+
+.card--title {
+  margin-bottom: 0.5rem;
+  font-size: 3.2rem;
+}
+
+.card--image {
+  margin: 0 auto;
+  display: block;
+}
