@@ -85,22 +85,15 @@ small {
   white-space: nowrap;
 }
 
-/*
-.card {
-  display: inline-block;
-  overflow: auto;
-  padding: 2rem 4rem;
-  border-radius: 10px;
-  border: 5px double;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.361);
-  margin: 3rem;
-  background-color: grey;
-  width: 350px;
-}
-*/
-
 .card--title {
   overflow-wrap: inherit;
+  margin: 4rem;
+  background-color: grey;
+  width: 350px;
+  display: block;
+}
+
+.card--title {
   margin-bottom: 0.5rem;
   font-size: 3.2rem;
 }
@@ -113,4 +106,5 @@ small {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  display: block;
 }
