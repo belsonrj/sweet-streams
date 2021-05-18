@@ -24,7 +24,7 @@ small {
 .container {
   margin: 0 auto;
   max-width: 1000px;
-  padding: 40px;
+  padding: 10px;
 }
 
 .title {
@@ -79,17 +79,14 @@ small {
 }
 
 .card-list {
-  align-items: baseline;
-  margin-top: 4rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
-.card {
-  padding: 2rem 4rem;
-  border-radius: 10px;
-  border: 5px double;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.361);
+.card--title {
+  overflow-wrap: inherit;
   margin: 4rem;
   background-color: grey;
   width: 350px;
@@ -103,5 +100,11 @@ small {
 
 .card--image {
   margin: 0 auto;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   display: block;
 }

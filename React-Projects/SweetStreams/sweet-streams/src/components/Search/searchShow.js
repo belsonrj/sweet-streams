@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import MovieCard from "../Movies/movieCard";
+import ShowCard from "../Show/showCard";
 
-export default function SearchMovies() {
+export default function SearchShow() {
 
     const [query, setQuery] = useState('');
-    const [movies, setMovies] = useState([]);
+    const [show, setShow] = useState([]);
 
-    const searchMovies = async (e) => {
+    const searchShow = async (e) => {
         e.preventDefault();
 
         const url = `https://api.themoviedb.org/3/search/movie?api_key=060345676ea883c7b9817d2e10cef7a8&language=en-US&query=${query}&page=1&include_adult=false`;
-      
+
         try {
             const res = await fetch(url);
             const data = await res.json();
-            setMovies(data.results);
+            setShow(data.results);
             //console.log(data.results)
         } catch(err) {
             console.error(err)
@@ -23,8 +23,8 @@ export default function SearchMovies() {
 
     return (
         <>
-            <h1 className="title">Search Movies</h1>
-            <form className="form" onSubmit={searchMovies}>
+            <h1 className="title">Search TV</h1>
+            <form className="form" onSubmit={searchShow}>
                 <label className="label" htmlFor="query" />
                 <input className="input" type="text" name="query"
                     placeholder="Search Movie Name" 
@@ -34,8 +34,8 @@ export default function SearchMovies() {
                 <button className="button" type="submit">Search</button>
             </form>
             <div className="card-list">
-                {movies.filter(movie => movie.poster_path).map(movie => (
-                    <MovieCard movie={movie} key={movie.id} />
+                {show.filter(shw => shw.poster_path).map(shw => (
+                    <ShowCard show={shw} key={shw.id} />
                 ))}
             </div>
         </>
