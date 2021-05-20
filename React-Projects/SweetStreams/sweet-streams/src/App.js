@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from "./NavBar/navBar";
 import Home from "./components/Home";
 import SearchMovies from "./components/Search/searchMovies";
-import SearchTele from "./components/Search/searchTele";
+import SearchShow from "./components/Search/searchShow";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
@@ -21,7 +21,7 @@ class App extends Component {
           <Route
             path="/tv"
             exact
-            component={SearchTele}
+            component={SearchShow}
           />
         </Switch>
       </Router>

@@ -9,8 +9,8 @@ export default function SearchShow() {
     const searchShow = async (e) => {
         e.preventDefault();
 
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=060345676ea883c7b9817d2e10cef7a8&language=en-US&query=${query}&page=1&include_adult=false`;
-
+        const url = `https://api.themoviedb.org/3/search/tv?api_key=060345676ea883c7b9817d2e10cef7a8&language=en-US&query=${query}&page=1&include_adult=false`;
+    
         try {
             const res = await fetch(url);
             const data = await res.json();
@@ -33,7 +33,7 @@ export default function SearchShow() {
                     />
                 <button className="button" type="submit">Search</button>
             </form>
-            <div className="card-list">
+            <div className="scrolling-wrapper">
                 {show.filter(shw => shw.poster_path).map(shw => (
                     <ShowCard show={shw} key={shw.id} />
                 ))}

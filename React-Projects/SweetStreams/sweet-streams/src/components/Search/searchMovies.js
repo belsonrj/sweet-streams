@@ -33,7 +33,7 @@ export default function SearchMovies() {
                     />
                 <button className="button" type="submit">Search</button>
             </form>
-            <div className="card-list">
+            <div className="scrolling-wrapper">
                 {movies.filter(movie => movie.poster_path).map(movie => (
                     <MovieCard movie={movie} key={movie.id} />
                 ))}
