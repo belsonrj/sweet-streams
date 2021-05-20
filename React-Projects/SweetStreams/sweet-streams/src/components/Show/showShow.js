@@ -5,29 +5,29 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from "../../styles/card.style";
-import MovieCard from './movieCard';
-import { addProviders } from '../../services/movies/movies.service';
+import ShowCard from './showCard';
+import { addProviders } from '../../services/shows/shows.service';
 
-export default function MovieShow({ movie }) {
-    
+export default function ShowShow({ show }) {
+
     const classes = useStyles();
     const [clicked, setClicked] = useState(false);
     const [providers, setProviders] = useState([]);
 
     useEffect(() => {
-        if (movie.id) {
-          addProviders(movie.id)      
+        if (show.id) {
+          addProviders(show.id)      
           .then((data) => {
               console.log(data.results.US);
             setProviders(data.results.US);
           })
         }
-      }, [movie]);
+      }, [show]);
 
     return (
         <>
         {clicked ? 
-        <MovieCard movie={movie}/> 
+        <ShowCard show={show}/> 
         :
         <Card
             className={classes.root}
@@ -36,7 +36,7 @@ export default function MovieShow({ movie }) {
             >
             <CardActionArea>
                 <Typography gutterBottom variant="h6" component="h2">
-                        {movie.title}
+                        {show.name}
                 </Typography>
                 <CardContent>
                     <Typography className={classes.content}>
@@ -63,7 +63,7 @@ export default function MovieShow({ movie }) {
                     "No Availibility Info Provided" }
                     <div>
                     <p className="sub-title">Overview:</p>
-                        {movie.overview}
+                        {show.overview}
                     </div>
                     </Typography>
                 </CardContent>

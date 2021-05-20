@@ -1,20 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import { useStyles } from "../../styles/card.style";
+import ShowShow from "../Show/showShow";
 
 export default function ShowCard({ show }) {
+    
+    const classes = useStyles();
+    const [clicked, setClicked] = useState(false);
 
     return (
-        <div className="card">
-            <img className="card--image"
-                src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${show.poster_path}`} 
-                alt={show.title + ' poster'}
+        <>
+        {clicked ? 
+        <ShowShow show={show}/> 
+        :
+        <Card
+            className={classes.root}
+            hoverable
+            onClick={()=>setClicked(!clicked)}
+            >
+            <CardActionArea>
+                <Typography gutterBottom variant="h6" component="h2">
+                        {show.name}
+                </Typography>
+                <CardMedia 
+                    className={classes.media}
+                    image={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${show.poster_path}`}
+                    alt={show.name + ' poster'}
+                    title={show.name}
                 />
-            <div className="card--content">
-                <h3 className="card--title">{show.title}</h3>
-                <p><small>RELEASE DATE: {show.release_date}</small></p>
-                
-                <p><small>USER RATING: {show.vote_average}</small></p>
-                <p className="card--desc">{show.overview}</p>
-            </div>
-        </div>
+                <CardContent>
+                    <Typography className={classes.content}>
+                        First Air: {show.first_air_date}
+                        <br/>
+                        User Rating: {show.vote_average}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        </Card>
+        }
+        </>
     )
 }
