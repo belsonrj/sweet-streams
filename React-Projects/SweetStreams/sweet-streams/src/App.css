@@ -85,10 +85,27 @@ small {
     margin-bottom: 0;
   }
 }
+
 */
+
+
+.card-list {
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
 
 .card--title {
   overflow-wrap: inherit;
+  margin: 4rem;
+  background-color: grey;
+  width: 350px;
+  display: block;
+}
+
+
+.card--title {
   margin-bottom: 0.5rem;
   font-size: 3.2rem;
 }
@@ -99,4 +116,5 @@ small {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  display: block;
 }

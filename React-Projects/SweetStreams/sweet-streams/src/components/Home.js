@@ -4,6 +4,7 @@ import PopularShow from "./Show/popularShow";
 
 export default function Home() {
     return (
+
         <>
             <PopularMovie />
             <PopularShow />

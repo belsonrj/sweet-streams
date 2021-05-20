@@ -45,5 +45,6 @@ export default function MovieCard({ movie }) {
         </Card>
         }
        </>
+
     )
 }
