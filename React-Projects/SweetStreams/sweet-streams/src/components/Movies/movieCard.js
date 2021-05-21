@@ -35,7 +35,7 @@ export default function MovieCard({ movie }) {
                 />
                 <CardContent>
                     <Typography className={classes.content}>
-                        <small className="sub-title">Date: </small>
+                        <small className="sub-title">Released: </small>
                         {movie.release_date}<br />
                         <small className="sub-title">User Rating: </small>
                         {movie.vote_average}

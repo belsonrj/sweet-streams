@@ -35,9 +35,11 @@ export default function ShowCard({ show }) {
                 />
                 <CardContent>
                     <Typography className={classes.content}>
-                        First Air: {show.first_air_date}
+                        <small className="sub-title">First Air: </small>
+                        {show.first_air_date}
                         <br/>
-                        User Rating: {show.vote_average}
+                        <small className="sub-title">User Rating: </small>
+                        {show.vote_average}
                     </Typography>
                 </CardContent>
             </CardActionArea>

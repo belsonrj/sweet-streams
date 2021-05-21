@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SearchMovies from "./components/Search/searchMovies";
 import SearchShow from "./components/Search/searchShow";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import GenreContainer from './components/Genres/genreContainer';
 
 class App extends Component {
   render() {
@@ -22,6 +23,11 @@ class App extends Component {
             path="/tv"
             exact
             component={SearchShow}
+          />
+          <Route
+            path="/genres"
+            exact
+            component={GenreContainer}
           />
         </Switch>
       </Router>
