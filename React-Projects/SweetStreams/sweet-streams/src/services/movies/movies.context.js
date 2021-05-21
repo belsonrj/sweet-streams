@@ -1,8 +1,9 @@
-/*
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext, useEffect } from "react";
+import { addProviders } from "./movies.service";
 
 import {
   popularRequest,
+  movieDetails,
 } from "./restaurants.service";
 
 export const MoviesContext = createContext();
@@ -29,10 +30,49 @@ export const MoviesContextProvider = ({ children }) => {
       });
   };
 
+  useEffect(() => {
+    addProviders()
+      .then(res => res.json())
+      .then(
+        res => {
+          setProviders(prevState => ({
+            ...prevState,
+            isLoaded: true,
+            response1: res
+          }));
+        },
+        error => {
+          setProviders(prevState => ({
+            ...prevState,
+            isLoaded: false,
+            error: error
+          }));
+        }
+      );
+    movieDetails()
+      .then(res => res.json())
+      .then(
+        res => {
+          setDetails(prevState => ({
+            ...prevState,
+            response2: res,
+            isLoaded2: true
+          }));
+        },
+        error => {
+          setDetails(prevState => ({
+            ...prevState,
+            error: error
+          }));
+        }
+      );
+  }, []);
+
   return (
     <MoviesContext.Provider
       value={{
-        movies,
+        providers
+        details,
         isLoading,
         error,
       }}
@@ -41,4 +81,3 @@ export const MoviesContextProvider = ({ children }) => {
     </MoviesContext.Provider>
   );
 };
-*/

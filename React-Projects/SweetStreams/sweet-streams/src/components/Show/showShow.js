@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from "../../styles/card.style";
 import ShowCard from './showCard';
-import { addProviders } from '../../services/shows/shows.service';
+import { addProviders } from '../../services/Shows/shows.service';
 
 export default function ShowShow({ show }) {
 

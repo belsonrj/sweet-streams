@@ -23,21 +23,21 @@ export default function SearchMovies() {
 
     return (
         <>
-            <h1 className="title">Search Movies</h1>
-            <form className="form" onSubmit={searchMovies}>
-                <label className="label" htmlFor="query" />
-                <input className="input" type="text" name="query"
-                    placeholder="Search Movie Name" 
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    />
-                <button className="button" type="submit">Search</button>
-            </form>
-            <div className="scrolling-wrapper">
-                {movies.filter(movie => movie.poster_path).map(movie => (
-                    <MovieCard movie={movie} key={movie.id} />
-                ))}
-            </div>
+        <h1 className="title">Search Movies</h1>
+        <form className="form" onSubmit={searchMovies}>
+            <label className="label" htmlFor="query" />
+            <input className="input" type="text" name="query"
+                placeholder="Search Movie Name" 
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                />
+            <button className="button" type="submit">Search</button>
+        </form>
+        <div className="scrolling-wrapper">
+            {movies.filter(movie => movie.poster_path).map(movie => (
+                <MovieCard movie={movie} key={movie.id} />
+            ))}
+        </div>
         </>
     )
 }

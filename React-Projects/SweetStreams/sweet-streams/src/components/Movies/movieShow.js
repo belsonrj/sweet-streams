@@ -6,19 +6,19 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from "../../styles/card.style";
 import MovieCard from './movieCard';
-import { addProviders } from '../../services/movies/movies.service';
+import { addProviders, movieDetails } from '../../services/Movies/movies.service';
 
 export default function MovieShow({ movie }) {
-    
+    console.log(movie);
     const classes = useStyles();
     const [clicked, setClicked] = useState(false);
     const [providers, setProviders] = useState([]);
+    //const [details, setDetails] = useState([]);
 
     useEffect(() => {
         if (movie.id) {
           addProviders(movie.id)      
           .then((data) => {
-              console.log(data.results.US);
             setProviders(data.results.US);
           })
         }
@@ -62,8 +62,9 @@ export default function MovieShow({ movie }) {
                     </div> :
                     "No Availibility Info Provided" }
                     <div>
-                    <p className="sub-title">Overview:</p>
-                        {movie.overview}
+                        <p className="sub-title">Overview:</p>
+                            {movie.overview}
+
                     </div>
                     </Typography>
                 </CardContent>
