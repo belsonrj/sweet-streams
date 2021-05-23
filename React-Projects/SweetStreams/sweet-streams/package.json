@@ -1,6 +1,9 @@
 {
   "name": "sweet-streams",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
