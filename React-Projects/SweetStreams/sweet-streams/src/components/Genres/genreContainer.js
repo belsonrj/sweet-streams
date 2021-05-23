@@ -1,23 +1,45 @@
-import React, { useState, useEffect } from "react";
-import { addGenres } from "../../services/Genres/genres.service";
+import React, { useState } from "react";
+import Button from '@material-ui/core/Button';
+import { popularGenres } from "../../services/Genres/genres.service";
+import { genres } from "../../services/Genres/genres.json";
+import MovieCard from "../Movies/movieCard";
 
 export default function GenreContainer() {
+      
+    const [movies, setMovies] = useState([]);
 
-    const [genres, setGenres] = useState([]);
-
-    useEffect(() => {
-        addGenres()
+    function getMovies(genreId) {
+        popularGenres(genreId)
         .then((data) => {
-            console.log(data);
-            setGenres(data.genres);
+            setMovies(data.results)
         })
-    }, [setGenres])
+        return movies
+    }
 
+    
     return(
-        <div>
+        <>
+        <div className="container">
             {genres.map(genre => (
-                <p>{genre.name}</p>
+                <Button 
+                color='primary'
+                onClick={() => getMovies(genre.id).then}
+                >
+                    {genre.name}
+                </Button>
             ))}
         </div>
+        {(movies) ?
+            <div className="container">
+                <div className="scrolling-wrapper">
+                    {movies.filter(movie => movie.poster_path).map(movie => (
+                        <MovieCard movie={movie} key={movie.id} />
+                    ))}
+                </div>
+            </div>
+        :
+        null
+        }
+       </>
     )
 }

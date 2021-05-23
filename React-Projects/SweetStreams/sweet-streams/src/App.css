@@ -29,13 +29,14 @@ small {
 }
 
 .container {
+  display: block;
   margin: 0 auto;
   max-width: 1000px;
   padding: 10px;
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
   text-decoration: overline;
 }
@@ -89,7 +90,6 @@ small {
 
 */
 
-
 .card-list {
   display: block;
   overflow-x: scroll;
@@ -105,7 +105,6 @@ small {
   display: block;
 }
 
-
 .card--title {
   margin-bottom: 0.5rem;
   font-size: 3.2rem;
@@ -117,5 +116,4 @@ small {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  display: block;
 }

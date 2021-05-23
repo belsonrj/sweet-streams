@@ -20,8 +20,9 @@ export const NavBarContainer = styled.header`
     width: 90%;
   }
   @media screen and (max-width: 800px) {
+    flex-direction: column;
     width: 100%;
-    padding: 0 10px;
+    padding: 5px;
   }
 `;
 
@@ -36,18 +37,16 @@ export const MenuBtn = styled(Link)`
   background: transparent;
   text-decoration: none;
   white-space: nowrap;
-  padding: 10px 20px;
+  padding: 0px 15px;
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 500;
-  border: 1px solid transparent;
   margin-right: 10px;
   color: ${({ primary }) =>
     primary === "true" ? theme.color.primary : "#fff"};
   &:hover {
     transition: all 0.3s ease-out;
-    /* border: 1px solid ${theme.color.primary_bright}; */
     color: ${({ primary }) =>
       primary === "true" ? theme.color.primary_bright : "#ffd52e"};
   }

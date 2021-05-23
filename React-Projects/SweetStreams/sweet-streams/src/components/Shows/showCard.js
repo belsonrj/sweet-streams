@@ -6,7 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from "../../styles/card.style";
-import ShowShow from "../Show/showShow";
+import ShowShow from "./showShow";
+import { genreSwitch } from "../Genres/genreId.info";
 
 export default function ShowCard({ show }) {
     
@@ -40,6 +41,11 @@ export default function ShowCard({ show }) {
                         <br/>
                         <small className="sub-title">User Rating: </small>
                         {show.vote_average}
+                        <br/>
+                        <small className="sub-title">Genre: </small>
+                        {show.genre_ids.map(g => (
+                            genreSwitch(g)
+                        ))}
                     </Typography>
                 </CardContent>
             </CardActionArea>

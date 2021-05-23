@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ShowCard from "../Show/showCard";
+import ShowCard from "../Shows/showCard";
 
 export default function SearchShow() {
 
@@ -15,7 +15,7 @@ export default function SearchShow() {
             const res = await fetch(url);
             const data = await res.json();
             setShow(data.results);
-            //console.log(data.results)
+            
         } catch(err) {
             console.error(err)
         }

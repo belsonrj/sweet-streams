@@ -6,14 +6,13 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from "../../styles/card.style";
 import MovieCard from './movieCard';
-import { addProviders, movieDetails } from '../../services/Movies/movies.service';
+import { addProviders } from '../../services/Movies/movies.service';
 
 export default function MovieShow({ movie }) {
     console.log(movie);
     const classes = useStyles();
     const [clicked, setClicked] = useState(false);
     const [providers, setProviders] = useState([]);
-    //const [details, setDetails] = useState([]);
 
     useEffect(() => {
         if (movie.id) {
@@ -40,6 +39,10 @@ export default function MovieShow({ movie }) {
                 </Typography>
                 <CardContent>
                     <Typography className={classes.content}>
+                    <div>
+                        <p className="sub-title">Overview:</p>
+                            {movie.overview}
+                    </div>
                     {(providers) ? 
                     <div>
                         <p className="sub-title">Stream:</p>
@@ -61,11 +64,6 @@ export default function MovieShow({ movie }) {
                             )) : "N/A"}
                     </div> :
                     "No Availibility Info Provided" }
-                    <div>
-                        <p className="sub-title">Overview:</p>
-                            {movie.overview}
-
-                    </div>
                     </Typography>
                 </CardContent>
             </CardActionArea>

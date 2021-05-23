@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ShowCard from "../Show/showCard";
+import ShowCard from "../Shows/showCard";
 
 export default function PopularShow() {
 

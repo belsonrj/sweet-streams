@@ -5,8 +5,10 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+
 import { useStyles } from "../../styles/card.style";
 import MovieShow from './movieShow';
+import { genreSwitch } from "../Genres/genreId.info";
 
 export default function MovieCard({ movie }) {
     
@@ -39,6 +41,11 @@ export default function MovieCard({ movie }) {
                         {movie.release_date}<br />
                         <small className="sub-title">User Rating: </small>
                         {movie.vote_average}
+                        <br/>
+                        <small className="sub-title">Genre: </small>
+                        {movie.genre_ids.map(g => (
+                            genreSwitch(g)
+                        ))}
                     </Typography>
                 </CardContent>
             </CardActionArea>

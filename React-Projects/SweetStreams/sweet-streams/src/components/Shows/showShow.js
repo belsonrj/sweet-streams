@@ -18,7 +18,7 @@ export default function ShowShow({ show }) {
         if (show.id) {
           addProviders(show.id)      
           .then((data) => {
-              console.log(data.results.US);
+            console.log(data);
             setProviders(data.results.US);
           })
         }
