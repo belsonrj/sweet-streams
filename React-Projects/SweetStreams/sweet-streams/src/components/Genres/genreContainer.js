@@ -1,8 +1,19 @@
 import React, { useState } from "react";
-import Button from '@material-ui/core/Button';
+import styled from "styled-components";
 import { popularGenres } from "../../services/Genres/genres.service";
 import { genres } from "../../services/Genres/genres.json";
 import MovieCard from "../Movies/movieCard";
+
+
+const Button = styled.button`
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  padding: 5px 30px;
+  border-radius: 8px;
+  margin: 10px 0px;
+  cursor: pointer;
+`;
 
 export default function GenreContainer() {
       
@@ -20,6 +31,7 @@ export default function GenreContainer() {
     return(
         <>
         <div className="container">
+            <div className="scrolling-wrapper">
             {genres.map(genre => (
                 <Button 
                 color='primary'
@@ -28,6 +40,7 @@ export default function GenreContainer() {
                     {genre.name}
                 </Button>
             ))}
+            </div>
         </div>
         {(movies) ?
             <div className="container">

@@ -26,11 +26,10 @@ export default function ShowShow({ show }) {
 
     return (
         <>
-        {clicked ? 
-        <ShowCard show={show}/> 
-        :
+        {clicked ? <ShowCard show={show}/> :
         <Card
             className={classes.root}
+            variant="outlined"
             hoverable
             onClick={()=>setClicked(!clicked)}
             >
@@ -40,6 +39,10 @@ export default function ShowShow({ show }) {
                 </Typography>
                 <CardContent>
                     <Typography className={classes.content}>
+                    <div>
+                    <p className="sub-title">Overview:</p>
+                        {show.overview}
+                    </div>
                     {(providers) ? 
                     <div>
                         <p className="sub-title">Stream:</p>
@@ -61,10 +64,6 @@ export default function ShowShow({ show }) {
                             )) : "N/A"}
                     </div> :
                     "No Availibility Info Provided" }
-                    <div>
-                    <p className="sub-title">Overview:</p>
-                        {show.overview}
-                    </div>
                     </Typography>
                 </CardContent>
             </CardActionArea>

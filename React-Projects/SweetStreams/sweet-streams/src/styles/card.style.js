@@ -6,10 +6,11 @@ export const useStyles = makeStyles({
         color: "white",
         maxWidth: 250,
         minWidth: 200,
-        height: 420,
+        height: 425,
         margin: 10,
         padding: 5,
         overflowY: "auto",
+        border: "outset",
     },
     media: {
         flex: 1,

@@ -16,9 +16,7 @@ export default function ShowCard({ show }) {
 
     return (
         <>
-        {clicked ? 
-        <ShowShow show={show}/> 
-        :
+        {clicked ? <ShowShow show={show}/> :
         <Card
             className={classes.root}
             hoverable

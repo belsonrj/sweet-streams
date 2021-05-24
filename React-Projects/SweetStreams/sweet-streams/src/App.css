@@ -36,6 +36,7 @@ small {
 }
 
 .title {
+  font-family: "Courier New", Courier, monospace;
   font-size: 3rem;
   text-align: center;
   text-decoration: overline;
@@ -89,26 +90,6 @@ small {
 }
 
 */
-
-.card-list {
-  display: block;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-}
-
-.card--title {
-  overflow-wrap: inherit;
-  margin: 4rem;
-  background-color: grey;
-  width: 350px;
-  display: block;
-}
-
-.card--title {
-  margin-bottom: 0.5rem;
-  font-size: 3.2rem;
-}
 
 .scrolling-wrapper {
   padding: 10px;

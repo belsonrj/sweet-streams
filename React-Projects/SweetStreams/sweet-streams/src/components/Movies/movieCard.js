@@ -17,9 +17,7 @@ export default function MovieCard({ movie }) {
 
     return (
         <>
-        {clicked ? 
-        <MovieShow movie={movie}/> 
-        :
+        {clicked ? <MovieShow movie={movie}/> :
         <Card
             className={classes.root}
             hoverable

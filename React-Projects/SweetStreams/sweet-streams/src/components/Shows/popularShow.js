@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
 import ShowCard from "../Shows/showCard";
+import { addPopular } from "../../services//Shows/shows.service";
 
 export default function PopularShow() {
 
     const [shows, setShows] = useState([]);
 
     useEffect(() => {
-        addPopular();
+        addPopular()      
+        .then((data) => {
+          console.log(data);
+          setShows(data.results);
+        })
     }, [setShows])
-
-    const addPopular = async () => {
-
-        const url = `https://api.themoviedb.org/3/tv/popular?api_key=060345676ea883c7b9817d2e10cef7a8&language=en-US&page=1`;
-
-        try {
-            const res = await fetch(url);
-            const data = await res.json();
-            setShows(data.results);
-            //console.log(data.results)
-        } catch(err) {
-            console.error(err)
-        }
-    }
 
     return (
         <>
