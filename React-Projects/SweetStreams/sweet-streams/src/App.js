@@ -4,6 +4,7 @@ import NavBar from "./NavBar/navBar";
 import Home from "./components/Home";
 import SearchMovies from "./components/Search/searchMovies";
 import SearchShow from "./components/Search/searchShow";
+import SearchActors from "./components/Search/searchActors";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GenreContainer from './components/Genres/genreContainer';
 
@@ -23,6 +24,11 @@ class App extends Component {
             path="/tv"
             exact
             component={SearchShow}
+          />
+          <Route
+            path="/actors"
+            exact
+            component={SearchActors}
           />
           <Route
             path="/genres"

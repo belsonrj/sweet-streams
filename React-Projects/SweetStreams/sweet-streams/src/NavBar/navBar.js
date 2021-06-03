@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsBook, BsFilm, BsTv } from "react-icons/bs";
+import { BsBook, BsFilm, BsTv, BsPerson } from "react-icons/bs";
 
 import {
     NavBarBigContainer,
@@ -20,6 +20,8 @@ export default function NavBar() {
                 <MenuBtn to="/movies">Movies</MenuBtn>
                 <BsTv />
                 <MenuBtn to="/tv">TV</MenuBtn>
+                <BsPerson />
+                <MenuBtn to="/actors">Actors</MenuBtn>
                 <BsBook />
                 <MenuBtn to="/genres">Genres</MenuBtn>
             </Wrapper>
