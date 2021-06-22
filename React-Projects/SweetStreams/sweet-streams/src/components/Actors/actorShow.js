@@ -37,11 +37,12 @@ export default function ActorShow({ actor }) {
                 </Typography>
                 <CardContent>
                     <Typography className={classes.content}>
-                    <p className="sub-title">Credits:</p>
+                    <p>Credits:</p>
                             { (credits) ? 
                                 credits.map(cred => (
                                 <ul>
-                                    <button onClick={() => movieDetails(cred.id)}><li>{cred.title} ({cred.release_date})</li></button>
+                                    <li className="sub-title">{cred.title}</li>
+                                    ({cred.release_date})
                                 </ul>
                             )) : "N/A"}
                     </Typography>

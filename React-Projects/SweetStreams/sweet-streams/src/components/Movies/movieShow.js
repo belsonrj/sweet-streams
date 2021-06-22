@@ -61,7 +61,7 @@ export default function MovieShow({ movie }) {
                                 <p>{prov.provider_name}</p>
                             )) : "N/A"}
                     </div> :
-                    "No Availibility Info Provided" }
+                        <p className="sub-title">No Availability Info Provided</p> }
                     </Typography>
                 </CardContent>
             </CardActionArea>

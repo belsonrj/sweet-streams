@@ -8,7 +8,6 @@ import Typography from '@material-ui/core/Typography';
 
 import { useStyles } from "../../styles/card.style";
 import ActorShow from './actorShow';
-//import { genreSwitch } from "../Genres/genreId.info";
 
 export default function ActorCard({ actor }) {
     
